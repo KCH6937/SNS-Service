@@ -37,6 +37,7 @@
 ### ERD 구조 설계
 ![personal-DB-image](https://user-images.githubusercontent.com/48710060/180148892-1ab21832-1e13-4dab-ace2-65ebe6d57cc8.png)
 - 조회수는 캐시(redis)로 처리 예정
+---
 ### 프로젝트 구조 설계
 ![스크린샷 2022-07-21 오후 3 56 27](https://user-images.githubusercontent.com/48710060/180149607-e7fb24a6-a7f1-4f40-890c-95bfe06d40f6.png)
 

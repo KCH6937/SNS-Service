@@ -5,6 +5,8 @@
 - 설계(11h)
 
   - DB(5h)
+  
+  - API(3h)
 
   - 프로젝트(6h)
     - 프로젝트 설계(typescript-express-starter 사용) : 30m 

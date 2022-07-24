@@ -1,6 +1,5 @@
-import { BaseEntity, Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, OneToMany } from 'typeorm';
+import { BaseEntity, Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, DeleteDateColumn, OneToMany } from 'typeorm';
 import { Board } from './boards.entity';
-import { TokenStorage } from './tokenStorage.entity';
 
 @Entity({ name: 'USER' })
 export class User extends BaseEntity {
@@ -19,10 +18,10 @@ export class User extends BaseEntity {
   @UpdateDateColumn({ name: 'updated_at' })
   updatedAt!: Date;
 
-  @Column({ name: 'deleted_at', nullable: true, width: 6 })
-  deletedAt: Date | null;
+  @DeleteDateColumn()
+  deletedAt?: Date;
 
   // User(1) <-> Application(*)
-  @OneToMany(type => Board, board => board.user)
+  @OneToMany(type => Board, board => board.userId)
   boards!: Board[];
 }

@@ -7,13 +7,14 @@ const message = {
   NOT_FOUND: '존재하지 않는 자원',
   INTERNAL_SERVER_ERROR: '서버 내부 오류',
 
-  ENTERED_BOSSRAID: '현재 진행중인 보스레이드',
-  NOT_USER_RAIDRECORDID: '유저의 raidRecordId 아님',
-  ALREADY_END_RAIDRECORDID: '이미 종료된 raidRecordId',
-  EXPIRED_RAIDRECORDID: '이미 만료된 raidRecordId',
+  // (사용자)회원가입 부분
+  ALREADY_EXIST_EMAIL: '이미 존재하는 이메일',
 
-  INVALID_USERID: '존재하지 않는 userId',
-  INVALID_RECORDID: '존재하지 않는 recordId',
+  // (사용자)로그인 부분
+  INVALID_USER_INFO: '존재하지 않는 회원정보',
+  NULL_VALUE_ACEESS_TOKEN: '토큰 필요',
+  ACCESS_TOKEN_EXPIRES: '토큰 만료',
+  INVALID_ACCESS_TOKEN: '토큰 검증 실패',
 };
 
 export default message;

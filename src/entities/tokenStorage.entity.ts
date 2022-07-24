@@ -9,17 +9,14 @@ export class TokenStorage extends BaseEntity {
   @Column({ name: 'refresh_token' })
   refreshToken!: string;
 
-  @Column()
-  content!: string;
-
   @CreateDateColumn({ name: 'created_at' })
   createdAt!: Date;
 
-  @Column({ name: 'deleted_at', nullable: true, width: 6 })
-  deletedAt: Date | null;
+  @Column({ name: 'expired_at', nullable: true, width: 6 })
+  expiredAt: Date | null;
 
   // User(1) <-> Board(*)
   @OneToOne(type => User, { nullable: false, onDelete: 'CASCADE' })
-  @JoinColumn()
+  @JoinColumn({ name: 'user_id' })
   user!: User;
 }

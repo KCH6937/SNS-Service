@@ -19,11 +19,14 @@ export class Board extends BaseEntity {
   @Column()
   title!: string;
 
-  @Column()
+  @Column({ width: 500, type: 'text' })
   content!: string;
 
   @CreateDateColumn({ name: 'created_at' })
   createdAt!: Date;
+
+  @CreateDateColumn({ length: 2, default: 0 })
+  rate!: number;
 
   @UpdateDateColumn({ name: 'updated_at' })
   updatedAt!: Date;
@@ -32,7 +35,7 @@ export class Board extends BaseEntity {
   deletedAt?: Date;
 
   // User(1) <-> Board(*)
-  @ManyToOne(type => User, user => user.boards, { nullable: false, onDelete: 'CASCADE' })
+  @ManyToOne(type => User, user => user.boards)
   @JoinColumn({ name: 'user_id' })
   userId!: User['id'];
 }
